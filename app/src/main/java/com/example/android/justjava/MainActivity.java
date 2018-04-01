@@ -2,7 +2,7 @@
  * IMPORTANT: Make sure you are using the correct package name.
  * This example uses the package name:
  * package com.example.android.justjava
- * If you get an error when copying this code into Android studio, update it to match teh package name found
+ * If you get an error when copying this code into Android studio, update it to match the package name found
  * in the project's AndroidManifest.xml file.
  **/
 
@@ -12,7 +12,9 @@
 
          import android.os.Bundle;
          import android.support.v7.app.AppCompatActivity;
+         import android.util.Log;
          import android.view.View;
+         import android.widget.CheckBox;
          import android.widget.TextView;
          import java.text.NumberFormat;
 /**
@@ -47,10 +49,12 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+              boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price);
+        String priceMessage = createOrderSummary(price, hasWhippedCream);
         displayMessage(priceMessage);
-
+        
     }
 
     /**
@@ -65,10 +69,12 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * @param price of the order
+     * @param addSomeWhippedCream is whether the customer wants whipped cream or not.
      * @ return text summary
      */
-    private String createOrderSummary (int price){
+    private String createOrderSummary (int price, boolean addSomeWhippedCream){
         String priceMessage = "Name: Shak Dizzle";
+        priceMessage += "\nAdd some whipped cream? " + addSomeWhippedCream;
         priceMessage = priceMessage + "\nQuantity:" + quantity;
         priceMessage = priceMessage + "\nTotal: $" + price;
         priceMessage = priceMessage + "\nThanks, Bitch!";
