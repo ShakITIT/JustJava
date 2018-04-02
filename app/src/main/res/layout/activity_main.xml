@@ -13,6 +13,14 @@
         android:paddingRight="16dp"
         android:paddingTop="16dp">
 
+        <EditText
+            android:id="@+id/name_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dante's Delight"
+            android:inputType="textCapWords"
+            android:layout_marginBottom="16dp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

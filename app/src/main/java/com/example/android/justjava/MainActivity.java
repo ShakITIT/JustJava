@@ -15,6 +15,7 @@
          import android.util.Log;
          import android.view.View;
          import android.widget.CheckBox;
+         import android.widget.EditText;
          import android.widget.TextView;
          import java.text.NumberFormat;
 /**
@@ -49,35 +50,60 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        EditText nameField = (EditText) findViewById(R.id.name_field);
+        String name = nameField.getText().toString();
+        Log.v("MainActivity", "NAME IN FIELD AT TOP:" + name);
+
+     // See if the customer wants whipped cream.
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+
+     //See if the customer wants chocolate
         CheckBox chocolatetyCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         boolean getsChocolate = chocolatetyCheckBox.isChecked();
         Log.v("Main Activity", "give him chocolate" + getsChocolate);
-        int price = calculatePrice();
-        String priceMessage = createOrderSummary(price, hasWhippedCream, getsChocolate);
+
+        int price = calculatePrice(hasWhippedCream, getsChocolate);
+        String priceMessage = createOrderSummary(name, price, hasWhippedCream, getsChocolate);
         displayMessage(priceMessage);
         
     }
 
     /**
      * Calculates the price of the order.
-     *
+     * @ add price of whipped cream
+     * @ add price of chocolate
      * @ returning the total price.
      */
-    private int calculatePrice() {
-        int price = quantity * 6;
-        return price;
+    private int calculatePrice(boolean hasWhippedCream, Boolean getsChocolate) {
+     // Price of 1 cup of coffee
+        int basePrice = 5;
+
+     // Add $1 if the customer wants whipped cream
+        if (hasWhippedCream){
+            basePrice = basePrice + 1;
+
+        }
+
+     // Add $2 if the customer wants chocolate
+        if (getsChocolate){
+            basePrice = basePrice + 2;
+
+        }
+
+     // Calculate the total order price by multiplying by quantity
+        return quantity * basePrice;
     }
 
     /**
+     * @param name of the customer
      * @param price of the order
-     * @param addSomeWhippedCream is whether the customer wants whipped cream or not.
+     * @param addSomeWhippedCream is whether the customer wants whipped cream.
      * @param getsChocolate is for people who want chocolate added.
      * @ return text summary
      */
-    private String createOrderSummary (int price, boolean addSomeWhippedCream, boolean getsChocolate){
-        String priceMessage = "Name: Shak Dizzle";
+    private String createOrderSummary (String name, int price, boolean addSomeWhippedCream, boolean getsChocolate){
+        String priceMessage = "Name:" + name;
         priceMessage += "\nAdd some whipped cream? " + addSomeWhippedCream;
         priceMessage += "\nGets Chocolate? " + getsChocolate;
         priceMessage = priceMessage + "\nQuantity:" + quantity;
