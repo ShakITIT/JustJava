@@ -50,9 +50,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
-              boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+        CheckBox chocolatetyCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        boolean getsChocolate = chocolatetyCheckBox.isChecked();
+        Log.v("Main Activity", "give him chocolate" + getsChocolate);
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price, hasWhippedCream);
+        String priceMessage = createOrderSummary(price, hasWhippedCream, getsChocolate);
         displayMessage(priceMessage);
         
     }
@@ -70,11 +73,13 @@ public class MainActivity extends AppCompatActivity {
     /**
      * @param price of the order
      * @param addSomeWhippedCream is whether the customer wants whipped cream or not.
+     * @param getsChocolate is for people who want chocolate added.
      * @ return text summary
      */
-    private String createOrderSummary (int price, boolean addSomeWhippedCream){
+    private String createOrderSummary (int price, boolean addSomeWhippedCream, boolean getsChocolate){
         String priceMessage = "Name: Shak Dizzle";
         priceMessage += "\nAdd some whipped cream? " + addSomeWhippedCream;
+        priceMessage += "\nGets Chocolate? " + getsChocolate;
         priceMessage = priceMessage + "\nQuantity:" + quantity;
         priceMessage = priceMessage + "\nTotal: $" + price;
         priceMessage = priceMessage + "\nThanks, Bitch!";
