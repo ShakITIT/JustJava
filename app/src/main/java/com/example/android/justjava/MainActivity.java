@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view) {
         quantity = quantity - 1;
-        displayQuantity (100);
+        displayQuantity (quantity);
     }
 
     @Override
