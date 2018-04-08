@@ -1,3 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Just Java</string>
+
+    <!--Header text for the list of toppings [Char Limit = 20]-->
+    <string name="Toppings"> Toppings</string>
+
+    <!--Name Field for Customers. [Char Limit = 25]-->
+    <string name="Dante_Delight"> Dante Delight</string>
+
+    <!--The whipped cream toppings [Char Limit = None]-->
+    <string name="Whipped_Cream"> Whipped Cream</string>
+
+    <!--The chocolate topping [Char Limit = None]-->
+    <string name="Chocolate"> Chocolate</string>
+
+    <!--How much of each topping added [Char Limit = None]-->
+    <string name="Quantity"> Quantity</string>
+
+    <!--Order button to place order [Char Limit = None]-->
+    <string name="Order"> Order</string>
+
+    // Hardcoded names from the Java section
+    <!--Name line for customer name. [Char Limit = None]-->
+    <string name="Name"> Name</string>
+
+    <!--Add whipped cream topping [Char Limit = None]-->
+    <string name="Add_some_whipped_cream"> Add some whipped cream</string>
+
+    <!--Add chocolate topping [Char Limit = None}-->
+    <string name="Gets_Chocolate"> Gets Chocolate</string>
+
+    <!--The total price of the order [Char Limit = None]-->
+    <string name="Total"> Total</string>
+
+    <!--Thank you message for the order summary. [Char Limit = None]-->
+    <string name="thanks_bitch"> Thanks Bitch!</string>
+
 </resources>

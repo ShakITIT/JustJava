@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JustJava.iml" filepath="$PROJECT_DIR$/JustJava.iml" />
-      <module fileurl="file://C:\Users\ShakT\Desktop\JustJava\JustJava.iml" filepath="C:\Users\ShakT\Desktop\JustJava\JustJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\ShakT\Desktop\JustJava\app\app.iml" filepath="C:\Users\ShakT\Desktop\JustJava\app\app.iml" />
     </modules>
   </component>
 </project>

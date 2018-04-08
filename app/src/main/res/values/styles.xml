@@ -1,11 +1,16 @@
 <resources>
 
-    <!-- Base application theme. -->
+    !-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#00BCD4</item>
+
+        <!--Darker color for the status bar-->
+        <item name="colorPrimaryDark">#0097A7</item>
+
+        <!--Theme UI controls like checkboxes and text-->
+        <item name="colorAccent">#536DFE</item>
     </style>
+
 
 </resources>
